@@ -1,0 +1,143 @@
+
+:root{
+  --bg:#070b0a;
+  --panel:#0f1512;
+  --panel-2:#141c18;
+  --text:#f7f3e8;
+  --muted:#aeb8b2;
+  --gold:#cbb77e;
+  --green:#177a54;
+  --green-2:#20a06f;
+  --line:rgba(203,183,126,.18);
+  --shadow:0 24px 70px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 85% 5%, rgba(32,160,111,.16), transparent 32%),
+    radial-gradient(circle at 10% 20%, rgba(203,183,126,.10), transparent 28%),
+    var(--bg);
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+.page{width:min(100%,760px);margin:0 auto;padding:20px 16px 36px}
+.hero{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(20,28,24,.97),rgba(9,14,12,.96));
+  border-radius:28px;
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  width:180px;height:180px;border-radius:50%;
+  background:rgba(32,160,111,.10);
+  filter:blur(12px);
+  right:-70px;top:-70px;
+}
+.logo-wrap{
+  width:118px;height:118px;border-radius:26px;
+  border:1px solid rgba(203,183,126,.26);
+  padding:8px;background:#000;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 35px rgba(0,0,0,.3);
+  position:relative;z-index:1;
+}
+.logo-wrap img{width:100%;height:100%;object-fit:contain;border-radius:18px}
+.kicker{margin:18px 0 6px;color:var(--gold);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase}
+h1{font-size:clamp(1.7rem,6vw,2.55rem);line-height:1.08;margin:0 0 8px}
+.subtitle{color:var(--muted);margin:0;line-height:1.7}
+.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px;position:relative;z-index:1}
+.btn{
+  min-height:54px;border-radius:16px;padding:0 14px;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:700;border:1px solid var(--line);
+  background:#151d19;transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px);border-color:rgba(203,183,126,.45)}
+.btn.primary{background:linear-gradient(135deg,var(--green),var(--green-2));border:none}
+.btn.gold{background:linear-gradient(135deg,#ae9657,#d5c28a);color:#10110f;border:none}
+.section-title{margin:28px 4px 12px;font-size:1rem;color:#e8dfc7}
+.company{
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:linear-gradient(145deg,rgba(19,27,23,.95),rgba(11,16,14,.95));
+  padding:16px;margin-bottom:12px;
+}
+.company-head{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.company-logo{
+  width:62px;height:62px;border-radius:16px;background:#000;
+  border:1px solid rgba(255,255,255,.06);padding:5px;flex:0 0 auto;
+}
+.company-logo img{width:100%;height:100%;object-fit:contain;border-radius:11px}
+.company h2{font-size:1.02rem;margin:0 0 4px}
+.company p{font-size:.82rem;color:var(--muted);margin:0}
+.link-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.link{
+  min-height:48px;border-radius:14px;padding:0 12px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:#0b100e;border:1px solid rgba(255,255,255,.07);font-weight:650;
+}
+.link.full{grid-column:1/-1}
+.contact-card{
+  margin-top:12px;padding:16px;border-radius:20px;
+  background:rgba(203,183,126,.07);border:1px solid rgba(203,183,126,.20);
+}
+.contact-row{display:flex;justify-content:space-between;gap:16px;padding:7px 0;color:var(--muted)}
+.contact-row strong{color:var(--text);text-align:right}
+.footer{padding:24px 4px 4px;text-align:center;color:#6e7a73;font-size:.78rem}
+.test-page{width:min(100%,760px);margin:0 auto;padding:24px 16px}
+.test-links{display:grid;gap:12px}
+.test-card{padding:18px;border-radius:20px;border:1px solid var(--line);background:var(--panel)}
+@media(max-width:430px){
+  .page{padding:12px 10px 28px}
+  .hero{padding:19px;border-radius:22px}
+  .logo-wrap{width:100px;height:100px;border-radius:22px}
+  .actions,.link-grid{grid-template-columns:1fr 1fr}
+  .btn,.link{font-size:.93rem}
+}
+@media(max-width:340px){
+  .actions,.link-grid{grid-template-columns:1fr}
+  .link.full{grid-column:auto}
+  .contact-row{flex-direction:column;gap:3px}
+  .contact-row strong{text-align:left}
+}
+/* Silicon üst alanını ortala */
+.hero {
+  text-align: center;
+}
+
+.logo-wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kicker {
+  text-align: center;
+}
+
+.hero h1 {
+  text-align: center;
+}
+.contact-row strong {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+/* Ana sayfadaki Silicon logosunu büyüt */
+.test-page .logo-wrap {
+  width: 180px;
+  height: 180px;
+}
+@media (max-width: 480px) {
+  .test-page .logo-wrap {
+    width: 145px;
+    height: 145px;
+  }
+}
